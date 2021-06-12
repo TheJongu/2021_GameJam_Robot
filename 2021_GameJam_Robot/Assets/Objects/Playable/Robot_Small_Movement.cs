@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Robot_Small_Movement : MonoBehaviour
 {
@@ -18,7 +19,9 @@ public class Robot_Small_Movement : MonoBehaviour
 
     private IEnumerable coroutine;
 
-    public LayerMask collisionMask;
+
+    public BoxCollider2D boxedCollider;
+    public TilemapCollider2D collisionTileMap;
 
 
     // Update is called once per frame
@@ -38,10 +41,16 @@ public class Robot_Small_Movement : MonoBehaviour
         }
     }
     private IEnumerator MovePlayer(Vector3 aDirection){
+        
+        
         isMoving = true;
         float timePassed = 0;
         orgPos = transform.position;
         targetPos = orgPos + aDirection;
+
+        if(collisionTileMap.IsTouching(boxedCollider)){
+            print("Is Touching");
+        }
 
         while(timePassed < timePerMove){
             transform.position = Vector3.Lerp(orgPos, targetPos, (timePassed / timePerMove));
