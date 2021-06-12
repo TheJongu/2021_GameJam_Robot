@@ -1,11 +1,11 @@
 # =============== #
 # Unity generated #
 # =============== #
-[Tt]emp/
-[Oo]bj/
-[Bb]uild
-[Bb]uilds/
-[Ll]ibrary/
+/2021_GameJam_Robot/[Tt]emp/
+/2021_GameJam_Robot/[Oo]bj/
+/2021_GameJam_Robot/[Bb]uild
+/2021_GameJam_Robot/[Bb]uilds/
+/2021_GameJam_Robot/[Ll]ibrary/
 sysinfo.txt
 *.stackdump
 /Assets/AssetStoreTools*
